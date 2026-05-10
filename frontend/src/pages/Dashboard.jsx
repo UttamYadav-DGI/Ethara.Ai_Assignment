@@ -108,10 +108,14 @@ export const Dashboard = ({ setCurrentPage }) => {
               <div className="project-footer">
                 <div className="members-preview">
                   {project.members.slice(0, 3).map((member, idx) => (
-                    <div key={idx} className="member-avatar" title={member.name}>
-                      {member.name.charAt(0).toUpperCase()}
-                    </div>
-                  ))}
+                      <div
+                        key={idx}
+                        className="member-avatar"
+                        title={member?.name || 'Unknown User'}
+                      >
+                        {member?.name?.charAt(0)?.toUpperCase() || "U"}
+                      </div>
+                    ))}
                   {project.members.length > 3 && (
                     <div className="member-avatar">+{project.members.length - 3}</div>
                   )}
