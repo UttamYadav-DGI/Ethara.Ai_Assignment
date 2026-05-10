@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: team-task-manager-api
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: MONGODB_URI
+        scope: all
+      - key: JWT_SECRET
+        scope: all
+      - key: NODE_ENV
+        value: production
+      - key: FRONTEND_URL
+        scope: all
